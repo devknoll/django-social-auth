@@ -803,7 +803,7 @@ class BaseOAuth2(BaseOAuth):
             query_string = '&' + self.request.META['QUERY_STRING']
         else:
             query_string = ''
-        return self.AUTHORIZATION_URL + '?' + urlencode(params) + query_string
+        return self.AUTHORIZATION_URL + '?' + urlencode(params)
 
     def validate_state(self):
         """Validate state value. Raises exception on error, returns state
