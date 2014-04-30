@@ -135,8 +135,8 @@ class FacebookAuth(BaseOAuth2):
             })
             try:
                 payload = dsa_urlopen(url)
-            except HTTPError:
-		raise
+            except HTTPError as e:
+		raise Exception(e.reason)
                 raise AuthFailed(self, 'There was an error authenticating '
                                        'the app')
 
